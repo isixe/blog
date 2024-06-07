@@ -1,6 +1,6 @@
 ---
 title: "更优雅的事件处理（AbortController » addEventListener）"
-date: 2023-1-30
+date: 2023-1-30 18:30
 categories: 前端
 tags: [JavaScript]
 ---

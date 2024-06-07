@@ -1,6 +1,6 @@
 ---
 title: ES Module 原生模块化前世今生
-date: 2023-11-3
+date: 2023-11-3 16:42
 categories: 前端
 index_img: /images/ESModule原生模块化前世今生-文件划分的模块.jpg
 tags: [JavaScript]

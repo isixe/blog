@@ -1,6 +1,6 @@
 ---
 title: JavaScript 模块化标准的演化（CommonJS › AMD › CMD › ES Module）
-date: 2023-11-5
+date: 2023-11-5 22:07
 categories: 前端
 index_img: /images/JavaScript模块化标准的演化（CommonJS›AMD›CMD›ESModule）-模块化标准演化过程.jpg
 tags: [JavaScript]

@@ -1,6 +1,6 @@
 ---
 title: "Python 建立虚拟环境"
-date: 2022-02-03
+date: 2022-02-03 14:50
 categories: 编程
 tags: [Python]
 ---

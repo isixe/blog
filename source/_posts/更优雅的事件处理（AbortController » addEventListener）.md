@@ -7,6 +7,8 @@ tags: [JavaScript]
 
 我们知道如果使用 removeEventListener(type, callback, useCapture) ，提供的参数必须与已添加事件一致，且 callback 不能是匿名函数或带参函数。某些情况下，我们不想多写函数用于引用，或着需要销毁多个事件，可以使用 AbortController 来处理。
 
+<!-- more -->
+
 ### AbortController 背景介绍
 
 AbortController 是一个通用的 DOM API。AbortController 接口表示一个控制器对象，允许根据需要中止一个或多个 Web 请求。

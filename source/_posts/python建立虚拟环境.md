@@ -11,6 +11,8 @@ Python 有三种方法可以创建虚拟环境
 2. pipenv
 3. conda
 
+<!-- more -->
+
 ## Virtualenv
 
 virtualenv 是一个用于创建隔离的 Python 环境的工具，它创建一个具有自己的安装目录的环境，该环境不与其他 virtualenv 环境共享库

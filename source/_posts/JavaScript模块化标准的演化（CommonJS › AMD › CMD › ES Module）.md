@@ -79,8 +79,6 @@ NodeJS 中对于一个模块，可以使用 require() 方法引入其他模块�
 
 [`RequireJS`](https://requirejs.org/) 实现了模块之间的依赖引用，并且可以并行加载多个模块。
 
-<img src='/images/JavaScript 模块化标准的演化（CommonJS › AMD › CMD › ES Module）-RequireJS 模块化语法.jpg' alt='RequireJS 模块化语法'/>
-
 ![RequireJS 模块化语法](/images/JavaScript模块化标准的演化（CommonJS›AMD›CMD›ESModule）-RequireJS模块化语法.jpg)
 
 但是，这种规范增加了代码的复杂性，必须提前加载所有的依赖，而不能按需加载，提高了开发成本。

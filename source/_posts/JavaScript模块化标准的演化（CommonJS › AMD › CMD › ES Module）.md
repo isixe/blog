@@ -6,7 +6,7 @@ index_img: /images/JavaScript模块化标准的演化（CommonJS›AMD›CMD›E
 tags: [JavaScript]
 ---
 
-从初步认识到模块化到实践求证，在这个过程中我深受启发，也得知了模块化的必要性。于是，我决定进一步将 NodeJS 和原生模块标准进行梳理，为深入学习两者铺好道路。
+从初步认识到模块化到实践求证，在这个过程中我深受启发，也得知了模块化的必要性。于是，我决定进一步将 Node.js 和原生模块标准进行梳理，为深入学习两者铺好道路。
 
 <!-- more -->
 
@@ -16,7 +16,7 @@ tags: [JavaScript]
 
 ![模块化标准的演化过程](/images/JavaScript模块化标准的演化（CommonJS›AMD›CMD›ESModule）-模块化标准演化过程.jpg)
 
-最早在 2009 年由 JavaScript 的社区提出一个用于服务端的模块化规范，即 `CommonJS` 规范。随即 NodeJS 出现，很好地实现了该规范，推出之后立即受到好评。
+最早在 2009 年由 JavaScript 的社区提出一个用于服务端的模块化规范，即 `CommonJS` 规范。随即 Node.js 出现，很好地实现了该规范，推出之后立即受到好评。
 
 `CommonJS` 规范的思想是在运行时加载模块，使用同步的方式加载并获取模块对象。
 
@@ -30,11 +30,11 @@ tags: [JavaScript]
 
 ### CommonJS 规范
 
-[CommonJS](https://nodejs.org/api/modules.html#modules-commonjs-modules) 在 2009 年由 Mozilla 的工程师 Kevin Dangoor 提出，主要用于服务端 JavaScript 的模块化。不久后，该标准在 NodeJS 中得到实现。
+[CommonJS](https://nodejs.org/api/modules.html#modules-commonjs-modules) 在 2009 年由 Mozilla 的工程师 Kevin Dangoor 提出，主要用于服务端 JavaScript 的模块化。不久后，该标准在 Node.js 中得到实现。
 
 [CommonJS](https://nodejs.org/api/modules.html#modules-commonjs-modules) 规范使用一种运行时加载的机制，执行时同步地加载模块文件，执行完成后才会确定模块导出的对象。因此，可以通过动态的控制加载的模块，例如用变量作为导入路径，或者通过 if 语句条件导入。在这个过程中，其他操作将会等待同步加载完成后继续执行。
 
-NodeJS 中对于一个模块，可以使用 require() 方法引入其他模块，并通过 module.exports 将自己的内容导出给其他模块使用。
+Node.js 中对于一个模块，可以使用 require() 方法引入其他模块，并通过 module.exports 将自己的内容导出给其他模块使用。
 
 ![CommonJS 模块化语法](/images/JavaScript模块化标准的演化（CommonJS›AMD›CMD›ESModule）-CommonJS模块化语法.jpg)
 
@@ -165,4 +165,4 @@ NodeJS 中对于一个模块，可以使用 require() 方法引入其他模块�
 
 ### 结语
 
-通过对模块化标准演化的历史的梳理，理清了前端发展的方向，这使得我们在看待 NodeJS 和原生模块化的差异时，能够减少疑惑。同时，更好地将两者更好的区分开来，防止两种技术的混淆。
+通过对模块化标准演化的历史的梳理，理清了前端发展的方向，这使得我们在看待 Node.js 和原生模块化的差异时，能够减少疑惑。同时，更好地将两者更好的区分开来，防止两种技术的混淆。

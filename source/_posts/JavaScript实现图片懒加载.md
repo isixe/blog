@@ -58,11 +58,11 @@ window.addEventListener("scroll", (e) => {
    for (let i = index; i < images.length; i++) {
       const im_top = images[i].getBoundingClientRect().top;
       if (im_top > window.innerHeight) {
-      continue;
-   }
-   const data_src = images[i].getAttribute('data-src');
-   images[i].setAttribute('src', data_src);
-   index++;
+         continue;
+      }
+      const data_src = images[i].getAttribute('data-src');
+      images[i].setAttribute('src', data_src);
+      index++;
    }
 });
 ```
@@ -95,10 +95,10 @@ const images = document.querySelectorAll('img');
 const showImage = entries => {
    entries.forEach(entry => {
       if (entry.isIntersecting) {
-      const image = entry.target;
-      const data_src = image.getAttribute('data-src');
-      image.setAttribute('src', data_src);
-      observer.unobserve(image);
+         const image = entry.target;
+         const data_src = image.getAttribute('data-src');
+         image.setAttribute('src', data_src);
+         observer.unobserve(image);
       }
    });
 }

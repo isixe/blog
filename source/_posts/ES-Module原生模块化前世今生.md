@@ -47,7 +47,7 @@ tags: [JavaScript]
 moduleA.js
 ``` javascript
 var moduleA = {
-variable_a: 10
+    variable_a: 10
 
     variable_b: function(){
         ...
@@ -80,12 +80,12 @@ var moduleB = {};
 moduleB.variable_a = 10;
 
 moduleB.variable_b = function(){
-...
-return 20;
+    ...
+    return 20;
 };
 
 moduleB.method = new function(){
-console.log('moduleB method');
+    console.log('moduleB method');
 }
 ```
 
@@ -108,7 +108,7 @@ B.HTML
 moduleC.js
 ``` javascript
 (function(){}
-let variable_a = 10;
+    let variable_a = 10;
 
     let variable_b = function(){
         ...
@@ -125,13 +125,12 @@ let variable_a = 10;
         variable_b : variable_b,
         method : method
     }
-
 )();
 
 // or
 
 (()=>{}
-const variable_a = 10;
+    const variable_a = 10;
 
     const variable_b = () => {
         ...
@@ -195,14 +194,14 @@ ESModuleA.js
 const variable = 10;
 
 const method = () => {
-console.log('ESModuleA');
+    console.log('ESModuleA');
 }
 
 export { variable, method }
-{% endhighlight %}
+```
 
 ESModuleB.js
-{% highlight javascript %}
+```
 import { variable, method } from './ESModuleA.js'
 
 console.log(variable);

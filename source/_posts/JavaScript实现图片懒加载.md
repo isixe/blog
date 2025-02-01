@@ -16,7 +16,14 @@ tags: [JavaScript]
 
 ![懒加载原理](images/JavaScript实现图片懒加载-懒加载原理.jpg)
 
-### 使用监听高度实现
+目前实现懒加载的方案主要有三种
+| 方法                             | 说明                                                                   |
+| :------------------------------- | :--------------------------------------------------------------------- |
+| getBoundingClientRect() 监听高度 | 通过滚动事件比较图片图片元素距离浏览器顶部的距离与网页窗口的高度差加载 |
+| Intersection Observer API        | 浏览器提供的视口 API 实现观测，当图片进入可见视口时加载                |
+| loading="lazy"                   | HTML5 中提供的内置属性，当图片在可视视口内时加载                       |
+
+### getBoundingClientRect() 监听高度
 
 首先我们需要两个数据
 
@@ -70,23 +77,21 @@ window.addEventListener("scroll", (e) => {
 以上方法即使在所有图片显示后也会对高度进行监听，因为我们无法直接移除 nodeList 的元素，当然也可以将 nodeList 转换为 Array 数组进行操作。
 此方法目前只在兼容浏览器条件下考虑使用，其他情况不建议。
 
-### 使用 IntersectionObserver 接口实现
+### Intersection Observer API
 
 [IntersectionObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver) 接口是浏览器提供的接口 (从属于 Intersection Observer API) ，它提供了一种异步观察目标元素与其祖先元素或顶级文档视窗(viewport)交叉状态的方法。
+
+![取消IntersectionObserver观测图示](/images/JavaScript实现图片懒加载-IntersectionObserver观测图示.jpg)
+
 使用此接口主要有两个方法
 
-1. 设置观测
+| 方法                                          | 说明     |
+| --------------------------------------------- | -------- |
+| IntersectionObserver.observe(targetElement)   | 设置观测 |
+| IntersectionObserver.unobserve(targetElement) | 取消观测 |
 
-   - IntersectionObserver.observe(targetElement);
-
-2. 取消观测
-
-   - IntersectionObserver.unobserve(targetElement);
-
-     ![取消IntersectionObserver观测图示](/images/JavaScript实现图片懒加载-取消IntersectionObserver观测图示.jpg)
-
-设置观测图片对图片进行监听后，被观测的图片对象和值保存在一组 IntersectionObserverEntry 对象的列表中，每个 IntersectionObserverEntry 包含了观测目标及其观测状态等信息。
-通过获取到的观测状态，我们可以根据图片是被观测到（isIntersecting）控制图片的加载。
+设置观测图片对图片进行监听后，被观测的图片对象和值保存在一组 `IntersectionObserverEntry` 对象的列表中，每个 `IntersectionObserverEntry` 包含了观测目标及其观测状态等信息。
+通过获取到的观测状态，我们可以根据图片是被观测到 `isIntersecting` 控制图片的加载。
 
 ``` javascript
 const images = document.querySelectorAll('img');
@@ -112,6 +117,19 @@ images.forEach(image => {
 
 通过设置观测图片和取消观测图片，我们就可以很简单的控制图片的懒加载，而不用担心重复调用的问题。
 
-**注**
+目前，[Intersection Observer API 有较好的浏览器的兼容性](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)，已经能够在实际场景中大范围使用。
 
-使用此接口请优先考虑浏览器的兼容性。
+
+### loading="lazy" 属性
+[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 属性用于指示浏览器应当如何加载该图像，当该属性设置为 'lazy' 时，会延迟加载图像，直到和视口接近浏览器计算的距离时才加载。
+
+```
+<body>
+   <img src="./default.jpg" loading="lazy">
+</body>
+```
+
+[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 虽然是 HTML5 提供的属性，但是其兼容性较晚于 Intersection Observer API。不过随着浏览器标准的不断迭代，[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 也能够很好运作在现代浏览器中。作为一种可选的 HTML 属性，也是图片懒加载方案中非常推荐的一种方式。
+
+### 总结
+至此，我们探讨了有关图片懒加载的几个方案，这给我们优化界面文档中的图片资源提供良好的方法。

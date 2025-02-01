@@ -129,7 +129,7 @@ images.forEach(image => {
 </body>
 ```
 
-[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 虽然是 HTML5 提供的属性，但是其兼容性较晚于 Intersection Observer API。不过随着浏览器标准的不断迭代，[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 也能够很好运作在现代浏览器中。作为一种可选的 HTML 属性，也是图片懒加载方案中非常推荐的一种方式。
+[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 虽然是 HTML5 提供的属性，但是 [loading 属性的兼容性](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/loading#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7) 较晚于 Intersection Observer API。不过随着浏览器标准的不断迭代，[loading](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#loading) 也能够很好运作在现代浏览器中。作为一种可选的 HTML 属性，也是图片懒加载方案中非常推荐的一种方式。
 
 ### 总结
 至此，我们探讨了有关图片懒加载的几个方案，这给我们优化界面文档中的图片资源提供良好的方法。当然，懒加载只作为图片资源的优化的一部分，此外仍有许多图片资源的优化可以探索。
